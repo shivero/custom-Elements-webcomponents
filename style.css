@@ -1,0 +1,18 @@
+.info {
+    color: red;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 1.2;
+    padding: 0.25rem 0.5rem;
+    background: oklch(70% 0.1577 257);
+    border-radius: 0.125rem;
+    display: grid;
+    opacity: 0;
+
+}
+
+.info:hover {
+    transition: grid-template-rows 300ms;
+}
