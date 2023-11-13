@@ -9,7 +9,6 @@ class Tooltip extends HTMLElement {
   connectedCallback() {
     // Create a shadow root
     const contents = Array.from(self.querySelectorAll("*"));
-    console.log(contents);
 
     const shadow = this.attachShadow({ mode: "open" });
 
@@ -52,8 +51,7 @@ class Tooltip extends HTMLElement {
   
         .info {
           font-size: 0.8rem;
-          max-width: 600px;
-          min-width: 60ch;
+          width: 320px;
           display: inline-block;
           border: 1px solid #1d1d1f;
           padding: 0.25rem 0.5rem;
