@@ -30,6 +30,24 @@
 
             }
         }
+
+        .carousel {
+            display: flex;
+            gap: 1rem;
+
+            & .box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1rem;
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
     </style>
 </head>
 
@@ -37,6 +55,78 @@
 
 
     <div class="container">
+        <h2>Product carousel example</h2>
+        <div class="carousel">
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://picsum.photos/200/300" alt="">
+                <div>Product name 1
+                    <popup-info data-html="true" theme="dark"
+                        data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
+         custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
+                        size="100">
+                        <img src="settings-icon.svg">
+                    </popup-info>
+                </div>
+            </div>
+
+
+        </div>
         <h2>Content wrapped inside will get a tooltip</h2>
         <div style="width: 100%; text-align: left;">
             <popup-info data-html="true" theme="dark"
@@ -48,14 +138,41 @@
         </div>
         <h2>Content wrapped inside will get a tooltip -- on right</h2>
         <div style="width: 100%; text-align: right;">
-            <popup-info data-html="true" theme="dark"
+            <popup-info data-html="true"
                 data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
          custom element takes an image icon and a text string as attributes, and embeds the icon into the page. When the icon is focused, it displays the text in a pop up information box to provide further in-context information."
                 size="100">
                 <img src="settings-icon.svg">
             </popup-info>
         </div>
-
+        <h2>Buttons</h2>
+        <c-button>
+            <template shadowrootmode="open">
+                <link rel="stylesheet" href="/c-button.css" />
+                <button variant="primary" size="small">
+                    <slot></slot>
+                </button>
+            </template>
+            Lorem
+        </c-button>
+        <c-button>
+            <template shadowrootmode="open">
+                <link rel="stylesheet" href="/c-button.css" />
+                <button variant="primary" size="default">
+                    <slot></slot>
+                </button>
+            </template>
+            Add to cart
+        </c-button>
+        <c-button>
+            <template shadowrootmode="open">
+                <link rel="stylesheet" href="/c-button.css" />
+                <button variant="accent" size="default">
+                    <slot></slot>
+                </button>
+            </template>
+            Add to cart
+        </c-button>
 
         <h2>Example 2 - render icon (?) with tooltip</h2>
 
@@ -69,8 +186,10 @@
     </div>
 
 
+
     <script src="popup.js" defer></script>
     <script src="tooltip.js" defer></script>
+    <script src="menuToggle.js" defer></script>
 
 </body>
 

@@ -10,10 +10,8 @@ class PopupInfo extends HTMLElement {
     const contents = Array.from(self.querySelectorAll("*"));
 
     var elem = self.querySelector("img").getBoundingClientRect();
-    console.log(window.innerWidth, elem.left);
     let right = null;
     if (window.innerWidth / 2 <= elem.left) {
-      console.log("right")
       right = 0;
     }
     const shadow = this.attachShadow({ mode: "open" });
@@ -45,14 +43,14 @@ class PopupInfo extends HTMLElement {
       style.textContent += `
         :host {
             --color: white;
-            --backgroundColor: #1d1d1f;
+            --bg-color: #1d1d1f;
         }`;
     }
     else {
       style.textContent += `
         :host {
-            --color: #1d1d1f;
-            --backgroundColor: white;
+            --text-color: #1d1d1f;
+            --bg-color: white;
         }`;
     }
     style.textContent += `
@@ -65,17 +63,20 @@ class PopupInfo extends HTMLElement {
         font-size: 0.8rem;
         width: 320px;
         display: inline-block;
-        border: 1px solid #1d1d1f;
-        padding: 0.25rem 0.5rem;
-        background: white;
+        border: 1px solid var(--bg-color));
+        padding: 1rem;
+        background: var(--bg-color);
+        color: var(--color);
         border-radius: 0.125rem;
         opacity: 0;
         transition: 0.6s all;
+        text-align:left;
         position: absolute;
         right: ${right};
         top: 100%;
         z-index: 3;
         box-shadow: 0 2px 0.5rem rgba(0,0,0,0.16);
+        display: none;
       }
 
       img {
@@ -86,6 +87,7 @@ class PopupInfo extends HTMLElement {
       }
       .icon:hover + .info, .icon:focus + .info {
         opacity: 1;
+        display: inline-block;
       }
     `;
 
