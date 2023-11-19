@@ -7,10 +7,37 @@
     <title>Webcomponent - tooltip</title>
     <link rel="stylesheet" href="normalize.css">
     <style>
+        :root {
+
+            --blue-50: #8DCDFF;
+            --blue-100: #78C5FF;
+            --blue-200: #4FB3FF;
+            --blue-300: #27A1FF;
+            --blue-400: #008FFD;
+            --blue-500: #0078D4;
+            --blue-600: #00589C;
+            --blue-700: #003864;
+            --blue-800: #00192C;
+            --blue-900: #000000;
+            --blue-950: #000000;
+            --orange-50: #FFD4B8;
+            --orange-100: #FFC7A3;
+            --orange-200: #FFAE7A;
+            --orange-300: #FF9652;
+            --orange-400: #FF7D29;
+            --orange-500: #FF6400;
+            --orange-600: #C74E00;
+            --orange-700: #8F3800;
+            --orange-800: #572200;
+            --orange-900: #1F0C00;
+            --orange-950: #030100;
+
+        }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             color: #1d1d1f;
-            background-color: #f2f5f7;
+            background-color: #1d1d1f;
         }
 
         .container {
@@ -42,11 +69,23 @@
                 gap: 0.5rem;
                 padding: 1rem;
 
+                & .image {
+                    width: 200px;
+                    height: 300px;
+                }
+
                 & img {
                     width: 100%;
                     height: auto;
                 }
             }
+        }
+
+        .showcase {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -58,7 +97,7 @@
         <h2>Product carousel example</h2>
         <div class="carousel">
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -69,7 +108,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -80,7 +119,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -92,7 +131,7 @@
             </div>
 
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -103,7 +142,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -114,7 +153,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="https://picsum.photos/200/300" alt="">
+                <div class="image"><img src="https://picsum.photos/200/300" alt=""></div>
                 <div>Product name 1
                     <popup-info data-html="true" theme="dark"
                         data-text="First, we'll look at an autonomous custom element. The &lt;code&gt;&lt;span style=&quot;background:red;color:white&quot;&gt;foto&lt;/span&gt;&lt;/code&gt;
@@ -146,33 +185,88 @@
             </popup-info>
         </div>
         <h2>Buttons</h2>
-        <c-button>
-            <template shadowrootmode="open">
-                <link rel="stylesheet" href="c-button.css" />
-                <button variant="primary" size="small">
-                    <slot></slot>
-                </button>
-            </template>
-            Lorem
-        </c-button>
-        <c-button>
-            <template shadowrootmode="open">
-                <link rel="stylesheet" href="c-button.css" />
-                <button variant="primary" size="default">
-                    <slot></slot>
-                </button>
-            </template>
-            Add to cart
-        </c-button>
-        <c-button>
-            <template shadowrootmode="open">
-                <link rel="stylesheet" href="c-button.css" />
-                <button variant="accent" size="default">
-                    <slot></slot>
-                </button>
-            </template>
-            Add to cart
-        </c-button>
+        <div class="showcase">
+            <c-button>
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="c-button.css" />
+                    <button variant="primary" size="small">
+                        <slot></slot>
+                    </button>
+                </template>
+                Lorem
+            </c-button>
+            <c-button>
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="c-button.css" />
+                    <button variant="primary" size="default">
+                        <slot></slot>
+                    </button>
+                </template>
+                Add to cart
+            </c-button>
+            <c-button>
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="c-button.css" />
+                    <button variant="accent" size="default">
+                        <slot></slot>
+                    </button>
+                </template>
+                Add to cart
+            </c-button>
+        </div>
+
+
+        <h2>
+            Stars - rating
+        </h2>
+        <div class="showcase">
+            <c-stars stars=" 1" style="--size:1.5rem">
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="src/stars/stars.css" />
+                    <div class="stars-wrapper">
+                        <span class="stars"></span>
+                    </div>
+                </template>
+            </c-stars>
+            <c-stars stars="2" style="--size:1.5rem">
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="src/stars/stars.css" />
+                    <div class="stars-wrapper">
+                        <span class="stars"></span>
+                    </div>
+                </template>
+            </c-stars>
+            <c-stars stars="4" style="--size:1.5rem">
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="src/stars/stars.css" />
+                    <div class="stars-wrapper">
+                        <span class="stars"></span>
+                    </div>
+                </template>
+            </c-stars>
+            <h4>With size</h4>
+            <c-stars stars="3" style="--size:1rem">
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="src/stars/stars.css" />
+                    <div class="stars-wrapper">
+                        <span class="stars"></span>
+                    </div>
+                </template>
+            </c-stars>
+
+            <h4>With legend</h4>
+            <c-stars stars="5" style="--size:1.5rem">
+                <legend slot="stars-slot">5,0</legend>
+                <template shadowrootmode="open">
+                    <link rel="stylesheet" href="src/stars/stars.css" />
+                    <div class="stars-wrapper">
+                        <slot name="stars-slot" class="stars-slot"></slot>
+                        <span class="stars"></span>
+                    </div>
+                </template>
+            </c-stars>
+        </div>
+
 
         <h2>Example 2 - render icon (?) with tooltip</h2>
 
@@ -183,13 +277,14 @@
             </tooltip-info>
             <h2>Hotel reviews</h2>
         </div>
-    </div>
 
 
 
-    <script src="popup.js" defer></script>
-    <script src="tooltip.js" defer></script>
-    <script src="c-button.js" defer></script>
+
+        <script src="popup.js" defer></script>
+        <script src="tooltip.js" defer></script>
+        <script src="c-button.js" defer></script>
+        <script src="src/stars/stars.js" defer></script>
 
 </body>
 
