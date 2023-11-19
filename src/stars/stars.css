@@ -1,0 +1,49 @@
+:host {
+    display: inline-block;
+    line-height: 1;
+    height: var(--size);
+}
+
+
+svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+slot.stars-slot {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    display: inline-flex;
+    font-size: calc(var(--size) * 1)
+}
+
+.stars-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    justify-content: center;
+    font-size: var(--size);
+}
+
+.stars {
+    display: inline-flex;
+    gap: 0.25rem;
+    color: #CED5D9;
+}
+
+.star {
+    width: 1em;
+    height: 1em;
+}
+
+
+.star--filled {
+    color: #FFC40D;
+}
+
+
+c-stars:not(:defined)>template[shadowrootmode]~* {
+    display: none;
+}

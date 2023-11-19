@@ -82,6 +82,15 @@ class PopupInfo extends HTMLElement {
       img {
         width: 1.2rem;
       }
+      .icon{
+        width: 18px;
+        height:18px;
+        display: inline-block;
+        & img {
+          width: 18px;
+        height:18px;
+        }
+      }
       .icon:hover{
           cursor: pointer;
       }
